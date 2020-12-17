@@ -45,15 +45,15 @@ while x!=1:
             berat_1 = int(input("Masukkan Berat Sampah Anda (kg):"))
             berat.append(berat_1)
             if sampah == 1:
-                saldo_1 = berat_1*2500
+                saldo_1 = berat_1*10000
                 saldo.append(saldo_1)
                 print("Uang Anda Terima sebesar: Rp.",saldo_1)
             elif sampah == 2:
-                saldo_1 = berat_1*1000
+                saldo_1 = berat_1*7000
                 saldo.append(saldo_1)
                 print("Uang Anda Terima sebesar: Rp.",saldo_1)
             elif sampah == 3:
-                saldo_1 = berat_1*3000
+                saldo_1 = berat_1*5000
                 saldo.append(saldo_1)
                 print("Uang yang diterima Anda sebesar: Rp.",saldo_1)
     elif pilih == 3:
