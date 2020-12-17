@@ -10,7 +10,7 @@ while x!=1:
     print("3. Keluar")
     pilih = int(input("Masukkan pilihan: "))
     if pilih == 1:
-        #usernama and passwd = admin1
+        #username and passwd = deas
         username = input("Username:")
         passwd = input("Password: ")
         if username == 'deas' and passwd == 'deas':
