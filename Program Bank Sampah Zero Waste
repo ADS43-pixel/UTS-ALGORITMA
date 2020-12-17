@@ -1,95 +1,70 @@
-import os
+print("Selamat Datang di Zero Waste Indonesia!")
 
-loop = True
-
-while loop:
-	def menu() :
-		print("\n-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
-		print("BANK SAMPAH ZERO WASTE INDONESIA!")
-		print("-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+")
-		print("1. Menu Admin")
-		print("2. Menu Setor Sampah")
-		print("\n------------------------------------------")
-		
-	def pesan():
-		jmlh_setor = int(input("Masukan jumlah sampah dalam pcs  : "))
-		num_array = list()
-		num = input("Berapa orang yang menyetor sampah ? : ")
-		print ("Masukkan nama penyetor : ")
-		for i in range (int(num)):
-			i += 1
-			n = input("orang ke {} :".format(i))
-			num_array.append(str(n)) 
-		total_uang = jmlh_setor*harga
-		print("\n----------------------------------------------")
-		print("Anda telah berhasil melakukan penyetoran sampah ")
-		print("----------------------------------------------")
-		print ("Nama penyetor :".format(len(num_array)))
-		for a in num_array:
-			print (("- {}").format(a))
-		print("Uang sampah yang diterima","Rp.",(total_uang))
-
-
-	menu()
-	pilihan = int(input("Masukan Pilihan [1-2] : "))
-
-	if ((pilihan) == 1):
-		print("\n-------------------------------------------------------")
-		print("\nINFORMASI JENIS SAMPAH DAN HARGA")
-		print("\nPlastik kemasan belum digunting per pcs = Rp1.000")
-		print("\nPlastik kemasan sudah digunting per pcs = Rp2.000")
-		print("\nPlastik kemasan sudah dianyam per 100 sudut = Rp5.000")
-		print("\nPlastik kemasan satu botol 500 ml = Rp1.500")
-			
-			
-	elif ((pilihan) == 2):
-
-		print("\n----------------------------------------")
-		print("\nKode  Sampah\tBentuk\t\tTotal")
-		print("\n      Plastik\tSampah\t\tHarga")
-		print("\n----------------------------------------")
-		print("\n101.  plastik biasa\tsampah kemasan \tRp1.000")
-		print("\n102.  plastik guntingan\tsampah kemasan \tRp2.000")
-		print("\n103.  plastik dianyam\tsampah kemasan \tRp5.000")
-		print("\n104.  plastik botolan\tsampah kemasan \tRp1.500")
-		print("\n---------------------------------------------")
-		no_sampah = int(input("Masukkan kode sampah : "))
-		
-		if ((no_sampah) == 101):
-			harga = 1000
-			print("")
-			print("---------------------------------")
-			print("Anda memilih kode sampah",+int(no_sampah))
-			print("---------------------------------")
-			pesan()
-			
-		elif ((no_sampah) == 102):
-			harga = 2000
-			print("")
-			print("---------------------------------")
-			print("anda memilih kode sampah",+int(no_sampah))
-			print("---------------------------------")
-			pesan()
-			
-		elif ((no_sampah) == 103):
-			harga = 5000
-			print("")
-			print("---------------------------------")
-			print("anda memilih kode sampah",+int(no_sampah))
-			print("---------------------------------")
-			pesan()
-
-		elif ((no_sampah) == 104):
-			harga = 1500
-			print("")
-			print("---------------------------------")
-			print("anda memilih kode sampah",+int(no_sampah))
-			print("---------------------------------")
-			pesan()
-			
-		else :
-			print("kode bus tidak ada dalam daftar")
-			
-			
-			
-	
+saldo=[]
+berat=[]
+x = 0
+while x!=1:
+    print("Login Sebagai:")
+    print("1. Admin Zero Waste Indonesia")
+    print("2. Nasabah Zero Waste Indonesia")
+    print("3. Keluar")
+    pilih = int(input("Masukkan pilihan: "))
+    if pilih == 1:
+        #usernama and passwd = admin1
+        username = input("Username:")
+        passwd = input("Password: ")
+        if username == 'deas' and passwd == 'deas':
+            print("1. Total Tabungan admin ")
+            print("2. Total Berat sampah yang terkumpul")
+            pilih = int(input("Pilih: "))
+            if pilih == 1:
+                total = sum(saldo)
+                print("Tabungan Admin saat ini : ", total)
+            elif pilih == 2:
+                bt = sum(berat)
+                print("Berat sampah yang terkumpul yaitu: ", bt, "Kg")
+        else:
+            print("Username atau password anda salah")
+    elif pilih == 2:
+        print("1. Harga Sampah")
+        print("2. Setor Sampah")
+        pilih = int(input(" Pilih : "))
+        if pilih == 1:
+            print("")
+            print("|\tJenis\t|\tHarga/kg\t|")
+            print("|=======================================|")
+            print("|\tSampah Kemasan sudah dianyam\t|\tRp.10000\t|")
+            print("|\tSampah Kemasan sudah digunting\t|\tRp.7000\t|")
+            print("|\tSampah Kemasan botolan\t|\tRp.5000\t|")
+        elif pilih == 2:
+            print("|\tPilih jenis sampah:\t|")
+            print("|1. \tSampah Kemasan sudah dianyam\t|")
+            print("|2. \tSampah Kemasan sudah digunting\t|")
+            print("|3. \tSampah Kemasan botolan\t|")
+            sampah = int(input("Pilih Jenis Sampah: "))
+            berat_1 = int(input("Masukkan Berat Sampah Anda (kg):"))
+            berat.append(berat_1)
+            if sampah == 1:
+                saldo_1 = berat_1*2500
+                saldo.append(saldo_1)
+                print("Uang Anda Terima sebesar: Rp.",saldo_1)
+            elif sampah == 2:
+                saldo_1 = berat_1*1000
+                saldo.append(saldo_1)
+                print("Uang Anda Terima sebesar: Rp.",saldo_1)
+            elif sampah == 3:
+                saldo_1 = berat_1*3000
+                saldo.append(saldo_1)
+                print("Uang yang diterima Anda sebesar: Rp.",saldo_1)
+    elif pilih == 3:
+        print("\n========-Terima Kasih Pahlawan Lingkungan ku!:)-========")
+        print("\nYakin Ingin Keluar y/t ")
+        pilih = input("")
+        if pilih=='y' or pilih =='Y':
+            x = 1
+        elif pilih =='t' or pilih =='T':
+            print("")
+        else:
+            print("Input salah")
+    else:
+        print("Menu Tidak Tersedia")
